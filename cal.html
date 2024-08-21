@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+    
+        table,tr,td{
+           border:5px solid silver;
+           border-collapse:collapse ;
+        
+        }
+        table{
+            height: 600px;
+            width: 430px;
+                margin: auto;
+            text-align: center;
+            margin-top: 50px;
+        }
+        button{
+            
+width: 80px;
+height: 80px;
+font-size: 20px;
+text-align: center;
+padding: 5px;
+margin: 5px;
+box-shadow: 5px 5px 5px silver;
+border-radius: 20px;
+border: 1px solid silver;
+
+
+        }
+        button:hover{
+            background-color: navy;
+            color: rgb(246, 244, 244);
+        }
+        input{
+           height: 29px;
+           width: 90%;
+            text-align: right;
+            font-size: 16px;
+            
+            
+            padding: 5px;
+            margin: 6px;
+        }
+        h1{
+            text-align: right;
+           
+            margin-right: 210px;
+            font-size: 11px;
+           
+        }
+    </style>
+
+
+<script>
+
+function btnpress(x){
+
+    document.getElementById("t1").value +=x;
+}
+function cleardata(){
+    document.getElementById("t1").value="";
+}
+
+function result()
+{
+    var a=document.getElementById("t1").value;
+    var b=eval(a);
+    document.getElementById("t1").value=b;
+}
+function backpress(){
+    var a=document.getElementById("t1").value;
+    var b=a.length;
+    var c=a.substr(0, b-1);
+    document.getElementById("t1").value=c;
+}
+</script>
+
+</head>
+<body>
+    <table  >
+        <tr>
+            <td colspan="7"> <input id="t1" placeholder="Answer" readonly/></td>
+        </tr>
+        <tr>
+            <td><button onclick="cleardata()">c</button></td>
+            <td><button onclick="backpress()"><</button></td>
+            <td><button onclick="btnpress('%')">%</button></td>
+            <td><button onclick="btnpress('/')">/</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="btnpress('7')">7</button></td>
+            <td><button onclick="btnpress('8')">8</button></td>
+            <td><button onclick="btnpress('9')">9</button></td>
+            <td><button onclick="btnpress('*')">*</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="btnpress('4')">4</button></td>
+            <td><button onclick="btnpress('5')">5</button></td>
+            <td><button onclick="btnpress('6')">6</button></td>
+            <td><button onclick="btnpress('-')">-</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="btnpress('1')">1</button></td>
+            <td><button onclick="btnpress('2')">2</button></td>
+            <td><button onclick="btnpress('3')">3</button></td>
+            <td><button onclick="btnpress('+')">+</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="btnpress('0')">0</button></td>
+            <td><button onclick="btnpress('.')">.</button></td>
+            <td><button onclick="btnpress('00')">00</button></td>
+            <td><button onclick="result()">=</button></td>
+        </tr>
+    </table>
+    <h1>amit kumar Digi{coders}</h1>
+</body>
+</html>
